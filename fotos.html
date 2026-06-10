@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fotos da Sarah 📷</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    /* Estilos extras específicos para a página de fotos */
+    .fotos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 35px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 24px 70px;
+    }
+
+    .foto-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .foto-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .foto-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.5s ease;
+    }
+
+    .foto-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .foto-card p {
+      padding: 20px 22px;
+      font-style: italic;
+      font-size: 1rem;
+      color: #5C3D2E;
+      line-height: 1.6;
+      background: linear-gradient(to bottom, white, #FFFDF9);
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Coraçãozinho no canto da foto */
+    .foto-card::after {
+      content: "❤️";
+      position: absolute;
+      bottom: 70px;
+      right: 15px;
+      font-size: 24px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 3;
+      pointer-events: none;
+      text-shadow: 0 0 5px rgba(0,0,0,0.3);
+    }
+
+    .foto-card:hover::after {
+      opacity: 0.8;
+    }
+
+    /* Efeito de brilho na borda */
+    .foto-card {
+      position: relative;
+    }
+
+    .foto-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #D4A0A0, #F0E6D3, #D4A0A0);
+      border-radius: 22px;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: -1;
+    }
+
+    .foto-card:hover::before {
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .fotos-grid {
+        gap: 25px;
+        padding: 20px 16px 50px;
+      }
+      .foto-card img {
+        height: 260px;
+      }
+      .foto-card p {
+        padding: 16px 18px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body class="fotos-page">
+
+  <a href="index.html" class="voltar">← Voltar</a>
+
+  <div class="pagina-header" style="color: #5C3D2E;">
+    <h1>My Girlfriend</h1>
+    <p>Cada traço, cada sorriso, uma obra-prima que Deus fez com carinho</p>
+  </div>
+
+  <div class="fotos-grid">
+
+    <!-- FOTO 2 (COM AJUSTE DE ROSTO CENTRALIZADO) -->
+<div class="foto-card">
+  <img src="fotos/foto2.jpeg" alt="Sarah" style="object-position: center 35%; object-fit: cover; width: 100%; height: 320px;">
+  <p>"Desde que te conheci, tinha certeza que a felicidade nesse mundo era estar ao seu lado"</p>
+</div>
+
+    <div class="foto-card">
+      <img src="fotos/foto3.jpeg" alt="Sarah">
+      <p>"A garota em que nunca imaginei estar comigo, se tornou o meu sonho de amor"</p>
+    </div>
+
+    <div class="foto-card">
+      <img src="fotos/foto4.jpeg" alt="Sarah">
+      <p>"Todos os dias em que acordo percebo o quanto Deus é bom em ter criado você, e tenho plena admiração por sua mãe, por ter você como filha com um coração cheio de amor e compaixão"</p>
+    </div>
+
+    <div class="foto-card">
+      <img src="fotos/foto5.jpeg" alt="Sarah">
+      <p>"Você sempre será a mulher da minha vida"</p>
+    </div>
+
+    <div class="foto-card">
+      <img src="fotos/foto6.jpeg" alt="Sarah">
+      <p>"Seu sorriso é facilmente a primeira maravilha do mundo, e isso para mim não tem preço, pois é um privilégio"</p>
+    </div>
+
+    <div class="foto-card">
+      <img src="fotos/foto7.jpeg" alt="Sarah">
+      <p>"Não quero que nada atrapalhe minha vida contigo, e tudo o que você merece é amor e viver os melhores momentos da vida"</p>
+    </div>
+
+    <div class="foto-card">
+      <img src="fotos/foto8.jpeg" alt="Sarah">
+      <p>"Será sempre a gente, até que Ele venha."</p>
+    </div>
+
+    <div class="foto-card">
+      <img src="fotos/foto9.jpeg" alt="Sarah">
+      <p>"Meu amor, faltou uma coisa... aquela frase sabe? hmm... será que é clichê? Bom, lógico que não. Sarah Chagas Nunes, Eu te amo. Em breve vou me casar com você."</p>
+    </div>
+
+  </div>
+
+  <script>
+    // Script para clique nas fotos (abrir em tamanho maior)
+    const fotoCards = document.querySelectorAll('.foto-card');
+    
+    fotoCards.forEach(card => {
+      card.addEventListener('click', function() {
+        const img = this.querySelector('img');
+        const text = this.querySelector('p').innerText;
+        
+        // Criar modal para ver foto em tamanho maior
+        const modal = document.createElement('div');
+        modal.style.cssText = `
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,0.9);
+          z-index: 10000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          animation: fadeIn 0.3s ease;
+        `;
+        
+        const modalContent = document.createElement('div');
+        modalContent.style.cssText = `
+          max-width: 90%;
+          max-height: 90%;
+          text-align: center;
+        `;
+        
+        const modalImg = document.createElement('img');
+        modalImg.src = img.src;
+        modalImg.style.cssText = `
+          max-width: 100%;
+          max-height: 70vh;
+          border-radius: 20px;
+          box-shadow: 0 0 30px rgba(212,160,160,0.5);
+          object-fit: contain;
+        `;
+        
+        const modalText = document.createElement('p');
+        modalText.innerText = text;
+        modalText.style.cssText = `
+          color: white;
+          margin-top: 20px;
+          font-size: 1.1rem;
+          font-style: italic;
+          max-width: 500px;
+          margin-left: auto;
+          margin-right: auto;
+          font-family: 'Lato', sans-serif;
+        `;
+        
+        const fechar = document.createElement('div');
+        fechar.innerHTML = '✕';
+        fechar.style.cssText = `
+          position: absolute;
+          top: 20px;
+          right: 30px;
+          color: white;
+          font-size: 35px;
+          cursor: pointer;
+          font-family: Arial;
+          transition: transform 0.2s;
+        `;
+        fechar.onmouseover = () => fechar.style.transform = 'scale(1.2)';
+        fechar.onmouseout = () => fechar.style.transform = 'scale(1)';
+        
+        modalContent.appendChild(modalImg);
+        modalContent.appendChild(modalText);
+        modal.appendChild(modalContent);
+        modal.appendChild(fechar);
+        
+        document.body.appendChild(modal);
+        
+        modal.onclick = (e) => {
+          if (e.target === modal) modal.remove();
+        };
+        fechar.onclick = () => modal.remove();
+        
+        // Adicionar animação
+        const style = document.createElement('style');
+        style.textContent = `
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+        `;
+        document.head.appendChild(style);
+      });
+    });
+  </script>
+
+</body>
+</html>
