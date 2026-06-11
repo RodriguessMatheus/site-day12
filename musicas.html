@@ -6,6 +6,27 @@
   <title>Músicas da Sarah 🎵</title>
   <link rel="stylesheet" href="css/style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet"/>
+  <style>
+    /* Estilo extra para o link do Spotify */
+    .spotify-playlist-link {
+      display: inline-block;
+      background: #1DB954;
+      color: white;
+      text-decoration: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: bold;
+      margin-top: 10px;
+      transition: transform 0.3s, background 0.3s;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .spotify-playlist-link:hover {
+      background: #1ed760;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body class="musicas-page">
 
@@ -106,6 +127,17 @@
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy">
       </iframe>
+    </div>
+
+    <!-- PLAYLIST COMPLETA - LINK DO SPOTIFY -->
+    <div class="musica-item">
+      <h3 style="color: #1B3A5C; font-family: 'Playfair Display', serif; margin-bottom: 8px;">🎧 Playlist Completa "My Girl"</h3>
+      <p style="color: #666; margin-bottom: 12px;">Clique e termine de ouvir no Spotify</p>
+      <a href="https://open.spotify.com/playlist/5ulvZkxWnISZPPbKoGRUnB?si=38a242be78a94c01" 
+         target="_blank" 
+         class="spotify-playlist-link">
+        🎵 Abrir no Spotify 🎵
+      </a>
     </div>
 
   </div>
